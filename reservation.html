@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Бронювання | VivOlive Trattoria</title>
+
+    <link rel="stylesheet" href="reservation.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+            <div class="logo">
+
+                <a href="index.html">
+
+                    <img src="img/logo.png" alt="VivOlive Trattoria">
+
+                </a>
+
+            </div>
+
+            <nav>
+
+                <a href="index.html">ГОЛОВНА</a>
+
+                <a href="menu.html">МЕНЮ</a>
+
+                <a href="products.html">НАШІ ПРОДУКТИ</a>
+
+                <a href="woodfire.html">ДРОВ'ЯНА ПІЧ</a>
+
+                <a href="gallery.html">ФОТОГАЛЕРЕЯ</a>
+
+                <a href="contacts.html">КОНТАКТИ</a>
+
+            </nav>
+
+            <a href="reservation.html" class="header-button">
+
+                ЗАБРОНЮВАТИ
+
+            </a>
+
+        </header>
+
+        <!-- ================= MAIN ================= -->
+
+        <main>
+
+            <section class="reservation">
+
+                <div class="reservation-content">
+
+                    <img src="img/olive-branch.png" alt="" class="olive-branch">
+
+                    <span class="reservation-subtitle">
+
+                        Viv@live Trattoria
+
+                    </span>
+
+                    <h1>
+
+                        Забронювати столик
+
+                    </h1>
+
+                    <p class="reservation-text">
+
+                        Заповніть форму нижче, і ми зв'яжемося з вами для підтвердження бронювання.
+
+                    </p>
+
+                    <form id="reservationForm">
+
+                        <div class="form-row">
+
+                            <div class="input-box">
+
+                                <label>ІМ'Я</label>
+
+                                <input type="text" placeholder="Ваше ім'я" required>
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>ТЕЛЕФОН</label>
+
+                                <input type="tel" placeholder="+38 (___) ___-__-__" required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="input-box">
+
+                                <label>ДАТА</label>
+
+                                <input type="date" required>
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>ЧАС</label>
+
+                                <input type="time" required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="input-box">
+
+                                <label>КІЛЬКІСТЬ ГОСТЕЙ</label>
+
+                                <select required>
+
+                                    <option value="" selected disabled hidden>
+
+                                        Оберіть кількість гостей
+
+                                    </option>
+
+                                    <option>1 гість</option>
+
+                                    <option>2 гості</option>
+
+                                    <option>3 гості</option>
+
+                                    <option>4 гості</option>
+
+                                    <option>5 гостей</option>
+
+                                    <option>6+ гостей</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="input-box">
+
+                                <label>ПРИВІД</label>
+
+                                <select required>
+
+                                    <option value="" selected disabled hidden>
+
+                                        Оберіть привід
+
+                                    </option>
+
+                                    <option>Звичайна вечеря</option>
+
+                                    <option>Романтична вечеря</option>
+
+                                    <option>День народження</option>
+
+                                    <option>Ділова зустріч</option>
+
+                                    <option>Інше</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div class="input-box full">
+
+                            <label>ПОБАЖАННЯ</label>
+
+                            <textarea placeholder="Наприклад: столик біля вікна..."></textarea>
+
+                        </div>
+
+                        <button type="button" class="reserve-button" onclick="openPopup()">
+
+                            ЗАБРОНЮВАТИ
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= POPUP ================= -->
+
+    <div class="success-popup" id="successPopup">
+
+        <div class="popup-box">
+
+            <div class="popup-check">
+
+                ✓
+
+            </div>
+
+            <h2>
+
+                Дякуємо!
+
+            </h2>
+
+            <p>
+
+                Ваш запит на бронювання успішно отримано.
+
+            </p>
+
+            <p>
+
+                Адміністратор <b>Viv@live Trattoria</b><br>
+                зв'яжеться з вами найближчим часом<br>
+                для підтвердження бронювання.
+
+            </p>
+
+            <button onclick="closePopup()">
+
+                ПОВЕРНУТИСЯ
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function openPopup() {
+
+            const form = document.getElementById("reservationForm");
+
+            if (form.checkValidity()) {
+
+                document.getElementById("successPopup").classList.add("active");
+
+            } else {
+
+                form.reportValidity();
+
+            }
+
+        }
+
+        function closePopup() {
+
+            document.getElementById("successPopup").classList.remove("active");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #F8F6F2;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    height: 100px;
+    background: #F8F6F2;
+    border-bottom: 1px solid #9AA56A;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    flex-shrink: 0;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 185px;
+    height: auto;
+    display: block;
+}
+
+/* ---------- MENU ---------- */
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    transform: translateX(-15px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #49392E;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: .3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: #708C42;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: #708C42;
+}
+
+/* ---------- BUTTON ---------- */
+
+.header-button {
+    width: 215px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #708C42;
+    color: #FFF;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.header-button:hover {
+    background: #5D7536;
+}
+
+/* ================= MAIN ================= */
+
+main {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- HERO (фонове фото) ---------- */
+
+.hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- HERO TEXT ---------- */
+
+.hero-content {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 450px;
+}
+
+.hero-content h1,
+.hero-content>span {
+    text-align: center;
+}
+
+/* Заголовок */
+
+.hero-content h1 {
+    font-family: "Cormorant Garamond", serif;
+    margin-bottom: 25px;
+    line-height: 0.9;
+}
+
+/* Viv@live */
+
+.olive-name {
+    display: block;
+    font-size: 82px;
+    font-weight: 600;
+    color: #87965A;
+    letter-spacing: 1px;
+}
+
+/* Trattoria */
+
+.brown-name {
+    display: block;
+    font-size: 52px;
+    font-weight: 500;
+    font-style: italic;
+    color: #5A4030;
+    margin-top: 5px;
+}
+
+/* "Італійська кухня" */
+
+.hero-content>span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: #718345;
+
+    margin: 30px 0;
+}
+
+/* лінії навколо "ІТАЛІЙСЬКА КУХНЯ" */
+
+.hero-content>span::before,
+.hero-content>span::after {
+    content: "";
+    height: 1px;
+    width: 55px;
+    background: #87965A;
+}
+
+.hero-content>span::before {
+    margin-right: 18px;
+}
+
+.hero-content>span::after {
+    margin-left: 18px;
+}
+
+/* Опис */
+
+.hero-content p {
+    width: 360px;
+    margin: 0 auto 16px;
+
+    text-align: left;
+
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: #40372F;
+    letter-spacing: 0.4px;
+
+    opacity: 0.9;
+}
+
+/* М'яка тінь тексту для читабельності на фото */
+
+.hero-content h1,
+.hero-content span,
+.hero-content p {
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.35);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    height: 115px;
+    background: #F8F6F2;
+    border-top: 1px solid #9AA56A;
+    flex-shrink: 0;
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* ---------- 4 БЛОКИ ---------- */
+
+.block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #9AA56A;
+}
+
+.block:last-child {
+    border-right: none;
+}
+
+/* ---------- ВНУТРІШНІЙ КОНТЕНТ ---------- */
+
+.block:not(.social-block) {
+    gap: 18px;
+}
+
+.block:not(.social-block) .footer-left {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+}
+
+.block:not(.social-block) .footer-right {
+    width: 170px;
+}
+
+/* ---------- ІКОНКИ ---------- */
+
+.footer-icon {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ---------- ТЕКСТ ---------- */
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-right h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #49392E;
+    margin-bottom: 6px;
+}
+
+.footer-right p {
+    font-size: 14px;
+    color: #6A6258;
+    line-height: 1.45;
+}
+
+/* ---------- СОЦМЕРЕЖІ ---------- */
+
+.social-block h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #49392E;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.social-icon {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: translateY(5px);
+}
+
+.social-icons a:nth-child(2) {
+    margin-left: -30px;
+}
